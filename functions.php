@@ -116,8 +116,6 @@ require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * TypeKit Fonts
- *
- * @since Theme 1.0
  */
 function theme_typekit() {
     wp_enqueue_script( 'theme_typekit', '//use.typekit.net/wvr5ync.js');
