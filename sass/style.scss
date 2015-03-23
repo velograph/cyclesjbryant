@@ -18,3 +18,40 @@
 @import "base/base";
 
 @import "variables";
+
+body {
+	margin: 0;
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+	.skip-link {
+		position: absolute;
+		text-indent: -99999px;
+	}
+}
+
+.header {
+	background: $light-gray;
+	padding: $fifty 0;
+	text-align: center;
+	svg {
+		margin-bottom: $twentyfive;
+		width: 250px;
+		path {
+			fill: $black;
+		}
+	}
+	nav {
+		li {
+			font: {
+				size: 22px;
+			}
+			display: inline-block;
+			margin: 0 $twentyfive;
+			a {
+				color: $black;
+			}
+		}
+	}
+}
