@@ -128,3 +128,13 @@ function theme_typekit_inline() {
 <?php }
 }
 add_action( 'wp_head', 'theme_typekit_inline' );
+
+
+/**
+ * Allow SVG upload
+ */
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
