@@ -20,31 +20,31 @@ h6 {
 }
 
 h1 {
-  font-size: $h1-font-size;
+    font: {
+        size: $h1-font-size;
+        weight: 100;
+      }
 }
 
 h2 {
-  font-size: $h2-font-size;
+  font: {
+      size: $h2-font-size;
+      weight: 100;
+    }
+    text-transform: uppercase;
 }
 
 h3 {
-  font-size: $h3-font-size;
-}
-
-h4 {
-  font-size: $h4-font-size;
-}
-
-h5 {
-  font-size: $h5-font-size;
-}
-
-h6 {
-  font-size: $h6-font-size;
+    font: {
+        size: $h3-font-size;
+        weight: 300;
+    }
 }
 
 p {
-  margin: 0 0 ($base-spacing / 2);
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0 0 ($base-spacing / 2);
 }
 
 a {

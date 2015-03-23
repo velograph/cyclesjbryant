@@ -18,7 +18,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'Cycles J Bryant' ); ?></a>
 
 	<header id="masthead" class="header" role="banner">
@@ -48,9 +47,6 @@
 			<?php wp_nav_menu(
 				array(
 					'theme_location' => 'primary',
-					'container'       => 'nav',
-					'menu_class' => 'centered-navigation-menu',
-					'menu_id' => 'js-centered-navigation-menu'
 				)
 			); ?>
 		</nav><!-- #site-navigation -->

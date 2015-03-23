@@ -20,6 +20,8 @@
 @import "variables";
 
 body {
+	background: $gray;
+	color: $light-gray;
 	margin: 0;
 	img {
 		height: auto;
@@ -29,29 +31,153 @@ body {
 		position: absolute;
 		text-indent: -99999px;
 	}
-}
-
-.header {
-	background: $light-gray;
-	padding: $fifty 0;
-	text-align: center;
-	svg {
-		margin-bottom: $twentyfive;
-		width: 250px;
-		path {
-			fill: $black;
+	.header {
+		background: $light-gray;
+		padding: $fifty 0;
+		text-align: center;
+		svg {
+			margin-bottom: $twentyfive;
+			width: 250px;
+			path {
+				fill: $black;
+			}
+		}
+		nav {
+			li {
+				font: {
+					size: 22px;
+				}
+				display: inline-block;
+				margin: 0 $twentyfive;
+				a {
+					color: $black;
+				}
+			}
 		}
 	}
-	nav {
-		li {
-			font: {
-				size: 22px;
-			}
-			display: inline-block;
-			margin: 0 $twentyfive;
-			a {
-				color: $black;
+	.site-content {
+		@include outer-container;
+		.lazyload,
+		.lazyloading {
+			opacity: 0;
+		}
+		.lazyloaded {
+			opacity: 1;
+			transition: opacity .3s ease-in;
+		}
+		.skill-icon {
+			text-align: center;
+		}
+	}
+}
+
+.front-page {
+	.hero-image {
+		@include row();
+	}
+	.leading-section {
+		@include row();
+		@include pad($twentyfive);
+		@include media( $large-screen ) {
+			@include pad($hundred $forty 0);
+		}
+		.heading {
+			margin-bottom: $twentyfive;
+			text-align: center;
+		}
+		.leading-section-content {
+			@include media( $large-screen ) {
+				margin-bottom: $hundred;
 			}
 		}
+
+	}
+	.explore-section {
+		@include row();
+		@include pad( $twentyfive );
+		.explore-icon {
+			margin-bottom: $fifty;
+		}
+		@include media( $large-screen ) {
+			.explore-image {
+				@include span-columns(5);
+			}
+			.explore-content {
+				@include span-columns(7);
+				@include pad( 0 $twentyfive );
+			}
+		}
+	}
+	.instagram-feed {
+		@include row();
+		.widget-title {
+			padding-left: $twentyfive;
+		}
+		.instagram-pics {
+			li {
+				display: inline-block;
+				padding: $twentyfive;
+				width: calc(100% / 5);
+			}
+		}
+	}
+	.crafted {
+		@include row();
+		margin-bottom: $hundred;
+		.crafted-icon {
+			margin: $hundred 0;
+		}
+		.crafted-image {
+			@include span-columns(5);
+		}
+		.crafted-content {
+			@include span-columns(7);
+			@include pad( 0 $twentyfive );
+		}
+	}
+}
+
+.footer {
+	background: $light-gray;
+	.footer-portal {
+		background: $yellow;
+		.portal-content {
+			@include outer-container;
+			padding: $ten 0;
+			h2, h3 {
+				display: inline;
+			}
+			h3 {
+				margin: 0 $twentyfive;
+			}
+		}
+	}
+	.site-info {
+		@include outer-container;
+		.footer-content {
+			color: $black;
+			.footer-logo {
+				@include span-columns(2);
+			}
+			.footer-menu {
+				@include span-columns(2);
+			}
+			.journal-link {
+				@include span-columns(4);
+			}
+			.social-connect {
+				@include span-columns(4);
+				@include omega;
+				svg {
+					display: inline-block;
+					width: $twentyfive;
+				}
+			}
+		}
+	}
+	.copyright {
+		@include row();
+		color: $black;
+		text-align: center;
 	}
 }

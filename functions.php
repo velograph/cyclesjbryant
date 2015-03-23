@@ -79,6 +79,15 @@ function cyclesjbryant_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Instagram', 'cyclesjbryant' ),
+		'id'            => 'instagram',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'cyclesjbryant_widgets_init' );
 
@@ -142,3 +151,15 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+
+/**
+ * Image Sizes
+ */
+add_image_size('hero-desktop', 1280, 600, true);
+add_image_size('hero-tablet', 1028, 482, true);
+add_image_size('hero-mobile', 500, 350, true);
+
+add_image_size('explore-desktop', 640, 640, true);
+add_image_size('explore-tablet', 480, 480, true);
+add_image_size('explore-mobile', 380, 380, true);
