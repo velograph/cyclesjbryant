@@ -163,3 +163,11 @@ add_image_size('hero-mobile', 500, 350, true);
 add_image_size('explore-desktop', 640, 640, true);
 add_image_size('explore-tablet', 480, 480, true);
 add_image_size('explore-mobile', 380, 380, true);
+
+add_image_size('bike-desktop', 2400, 1600, true);
+add_image_size('bike-tablet', 1028, 685, true);
+add_image_size('bike-mobile', 480, 320, true);
+
+add_image_size('versatility-desktop', 2400, 600, true);
+add_image_size('versatility-tablet', 1028, 257, true);
+add_image_size('versatility-mobile', 480, 120, true);

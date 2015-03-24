@@ -59,7 +59,6 @@ body {
 		}
 	}
 	.site-content {
-		@include outer-container;
 		.lazyload,
 		.lazyloading {
 			opacity: 0;
@@ -75,6 +74,7 @@ body {
 }
 
 .front-page {
+	@include outer-container;
 	.hero-image {
 		@include row();
 	}
@@ -136,6 +136,67 @@ body {
 		.crafted-content {
 			@include span-columns(7);
 			@include pad( 0 $twentyfive );
+		}
+	}
+}
+
+
+.page-template-bikes {
+	background: $black;
+	.bike-overview {
+		@include outer-container;
+		.page-title {
+			margin: $hundred 0;
+			text-align: center;
+		}
+		.portal-container {
+			@include row();
+			.bike-portal {
+				@include span-columns(6);
+				text-align: center;
+				.bike-image {
+					margin-bottom: $fifteen;
+				}
+				.bike-name {
+					margin-bottom: $hundred;
+				}
+			}
+		}
+	}
+	.slogan {
+		background: $gray;
+		padding: $hundred 0;
+		text-align: center;
+	}
+	.versatility-container {
+		background: $light-gray;
+		.versatility-feature {
+			position: relative;
+			.versatility-image {
+				position: relative;
+				img {
+					margin-bottom: -5px;
+				}
+			}
+			.content {
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				@include transform(translate(-50%,-50%));
+				.versatility-icon {
+					@include span-columns(5);
+				}
+				.versatility-content {
+					@include span-columns(7);
+				}
+			}
+			&:last-of-type {
+				.versatility-image {
+					img {
+						margin-bottom: -7px;
+					}
+				}
+			}
 		}
 	}
 }
