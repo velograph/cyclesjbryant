@@ -215,6 +215,7 @@ body {
 		}
 	}
 }
+
 .single {
 	.jounral-entry {
 		margin-top: $hundred;
@@ -226,6 +227,7 @@ body {
 		}
 	}
 }
+
 .journal-paging {
 	@include outer-container;
 	.paging-navigation,
@@ -235,6 +237,7 @@ body {
 		margin-bottom: $fifty;
 	}
 }
+
 .comments-container {
 	@include outer-container;
 	margin-bottom: $hundred;
