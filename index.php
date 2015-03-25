@@ -13,24 +13,52 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="journal">
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php /* Start the Loop */ ?>
+			<h1 class="page-title">Follow Along on my Adventures</h1>
+
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+				<article class="jounral-entry">
+
+					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+
+					<a href="<?php the_permalink(); ?>">
+						<?php $small_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'hero-mobile' ); ?>
+						<?php $medium_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'hero-tablet' ); ?>
+						<?php $large_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'hero-desktop' ); ?>
+
+						<picture class="hero-image">
+							<!--[if IE 9]><video style="display: none"><![endif]-->
+							<source
+								data-srcset="<?php echo $small_image[0]; ?>"
+								media="(max-width: 500px)" />
+							<source
+								data-srcset="<?php echo $medium_image[0]; ?>"
+								media="(max-width: 1028px)" />
+							<source
+								data-srcset="<?php echo $large_image[0]; ?>"
+								media="(max-width: 2224px)" />
+						<!--[if IE 9]></video><![endif]-->
+						<img
+								src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+								class="lazyload"
+								alt="Cycles J Bryant" />
+						</picture>
+					</a>
+
+					<?php the_excerpt(); ?>
+
+					<hr />
+
+					Categorized by: <?php the_category(); ?>
+
+				</article>
 
 			<?php endwhile; ?>
 
-			<?php basis_paging_nav(); ?>
 
 		<?php else : ?>
 
@@ -39,5 +67,11 @@ get_header(); ?>
 		<?php endif; ?>
 
 	</div><!-- #primary -->
+
+	<section class="journal-paging">
+
+		<?php basis_paging_nav(); ?>
+
+	</section>
 
 <?php get_footer(); ?>

@@ -27,6 +27,9 @@ body {
 		height: auto;
 		max-width: 100%;
 	}
+	a {
+		color: $yellow;
+	}
 	.skip-link {
 		position: absolute;
 		text-indent: -99999px;
@@ -140,15 +143,15 @@ body {
 	}
 }
 
+.page-title {
+	margin: $hundred 0;
+	text-align: center;
+}
 
 .page-template-bikes {
 	background: $black;
 	.bike-overview {
 		@include outer-container;
-		.page-title {
-			margin: $hundred 0;
-			text-align: center;
-		}
 		.portal-container {
 			@include row();
 			.bike-portal {
@@ -196,6 +199,59 @@ body {
 						margin-bottom: -7px;
 					}
 				}
+			}
+		}
+	}
+}
+
+.journal {
+	@include outer-container;
+	.jounral-entry {
+		@include span-columns(8);
+		@include shift(2);
+		margin-bottom: $hundred;
+		.entry-title {
+			margin-bottom: $fifteen;
+		}
+	}
+}
+.single {
+	.jounral-entry {
+		margin-top: $hundred;
+		img {
+			margin-bottom: $fifteen;
+		}
+		ul {
+			margin-bottom: $twentyfive;
+		}
+	}
+}
+.journal-paging {
+	@include outer-container;
+	.paging-navigation,
+	.post-navigation {
+		@include span-columns(8);
+		@include shift(2);
+		margin-bottom: $fifty;
+	}
+}
+.comments-container {
+	@include outer-container;
+	margin-bottom: $hundred;
+	.comments-area {
+		@include span-columns(8);
+		@include shift(2);
+		.comments-title {
+			margin-bottom: $twentyfive;
+		}
+		.comment,
+		.pingback {
+			margin-bottom: $twentyfive;
+		}
+		.comment {
+			.children {
+				@include shift(.5);
+				margin-top: $fifteen;
 			}
 		}
 	}

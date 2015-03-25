@@ -142,6 +142,10 @@ function theme_typekit_inline() {
 }
 add_action( 'wp_head', 'theme_typekit_inline' );
 
+/**
+ * Disable woocommerce styles
+ */
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 /**
  * Allow SVG upload

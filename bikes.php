@@ -49,23 +49,25 @@ get_header(); ?>
 								<?php $medium_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'bike-tablet' ); ?>
 								<?php $large_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'bike-desktop' ); ?>
 
-								<picture class="bike-image">
-									<!--[if IE 9]><video style="display: none"><![endif]-->
-									<source
-										data-srcset="<?php echo $small_image[0]; ?>"
-										media="(max-width: 500px)" />
-									<source
-										data-srcset="<?php echo $medium_image[0]; ?>"
-										media="(max-width: 1028px)" />
-									<source
-										data-srcset="<?php echo $large_image[0]; ?>"
-										media="(max-width: 2224px)" />
-									<!--[if IE 9]></video><![endif]-->
-									<img
-										src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										class="lazyload"
-										alt="Cycles J Bryant" />
-								</picture>
+								<a href="<?php the_permalink(); ?>">
+									<picture class="bike-image">
+										<!--[if IE 9]><video style="display: none"><![endif]-->
+										<source
+											data-srcset="<?php echo $small_image[0]; ?>"
+											media="(max-width: 500px)" />
+										<source
+											data-srcset="<?php echo $medium_image[0]; ?>"
+											media="(max-width: 1028px)" />
+										<source
+											data-srcset="<?php echo $large_image[0]; ?>"
+											media="(max-width: 2224px)" />
+										<!--[if IE 9]></video><![endif]-->
+										<img
+											src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+											class="lazyload"
+											alt="Cycles J Bryant" />
+									</picture>
+								</a>
 							</div>
 
 							<h3 class="bike-name">

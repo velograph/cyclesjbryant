@@ -7,23 +7,37 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="journal">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'single' ); ?>
+			<article class="jounral-entry">
 
-			<?php basis_post_nav(); ?>
+				<h2 class="entry-title"><?php the_title(); ?></h2>
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+				<?php the_content(); ?>
+
+			</article>
 
 		<?php endwhile; // end of the loop. ?>
 
 	</div><!-- #primary -->
+
+	<section class="journal-paging">
+
+		<?php basis_post_nav(); ?>
+
+	</section>
+
+	<div class="comments-container">
+
+		<?php
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		?>
+
+	</div>
 
 <?php get_footer(); ?>
